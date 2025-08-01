@@ -1,0 +1,95 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Network Delivers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #6f2dbd, #33cccc);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    h1 {
+      margin: 10px 0 5px;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+
+    .products {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      color: #000;
+    }
+
+    .product {
+      flex: 0 0 auto;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      background: #f7f7f7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      background: #111;
+      padding: 10px 20px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#">My Account</a>
+    <a href="#">Cart</a>
+  </nav>
+
+  <header>
+    <img src="https://raw.githubusercontent.com/NetworkDelivers/network-delivers/main/logo.png" alt="Network Delivers Logo">
+    <h1>Network Delivers</h1>
+    <p class="tagline">"Fast. Reliable. Delivered."<br>"Powered by Tech, Delivered with Trust."</p>
+  </header>
+
+  <section class="products">
+    <div class="product">
+      <h3>Sample Product 1</h3>
+      <p>Description</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <h3>Sample Product 2</h3>
+      <p>Description</p>
+      <button>Add to Cart</button>
+    </div>
+    <!-- Add more product boxes here -->
+  </section>
+</body>
+</html>
+<h1>Network Delivers</h1>
+
