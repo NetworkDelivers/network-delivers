@@ -4,68 +4,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Network Delivers</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      background-color: #ffce00;
+      color: #000;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    main {
+      padding: 2rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product button {
+      background-color: #ffce00;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .payments {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #222;
+      border-radius: 10px;
+    }
+    .payments h2 {
+      color: #ffce00;
+    }
+    .payments button {
+      margin: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Network Delivers Logo" class="logo" />
-    <h1>Network Delivers</h1>
-    <div class="nav-actions">
-      <button onclick="toggleLogin()">Login</button>
-      <div class="cart">
-        🛒 <span id="cart-count">0</span>
-      </div>
-    </div>
+    <img src="logo.png" alt="Network Delivers Logo" />
+    <h1>We Deliver Everything, Everywhere</h1>
   </header>
 
-  <!-- Scrollable Product Section -->
-  <section class="products">
+  <main>
     <h2>Our Products</h2>
-    <div class="product-list">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product 1" />
-        <h3>Item One</h3>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Product 1" />
+        <h3>Product Name 1</h3>
         <p>₹499</p>
-        <button onclick="addToCart()">Add to Cart</button>
+        <button>Add to Cart</button>
       </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product 2" />
-        <h3>Item Two</h3>
-        <p>₹899</p>
-        <button onclick="addToCart()">Add to Cart</button>
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Product 2" />
+        <h3>Product Name 2</h3>
+        <p>₹799</p>
+        <button>Add to Cart</button>
       </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/150" alt="Product 3" />
-        <h3>Item Three</h3>
-        <p>₹299</p>
-        <button onclick="addToCart()">Add to Cart</button>
-      </div>
-      <!-- Add more product cards as needed -->
+      <!-- Add more products here -->
     </div>
-  </section>
 
-  <!-- Login Form -->
-  <div class="login-popup" id="loginPopup">
-    <div class="login-box">
-      <h2>Customer Login</h2>
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
-      <button onclick="toggleLogin()">Login</button>
+    <div class="payments">
+      <h2>Choose Payment Method</h2>
+      <button>Google Pay</button>
+      <button>PhonePe</button>
+      <button>Paytm</button>
+      <button>Amazon Pay</button>
+      <button>UPI</button>
+      <button>Credit / Debit Card</button>
+      <button>Cash on Delivery</button>
     </div>
-  </div>
-
-  <script>
-    let cartCount = 0;
-
-    function addToCart() {
-      cartCount++;
-      document.getElementById("cart-count").innerText = cartCount;
-    }
-
-    function toggleLogin() {
-      const popup = document.getElementById("loginPopup");
-      popup.style.display = popup.style.display === "flex" ? "none" : "flex";
-    }
-  </script>
+  </main>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Delivers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+    header {
+      background-color: #ffce00;
+      color: #000;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    main {
+      padding: 2rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .product {
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product button {
+      background-color: #ffce00;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .payments {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #222;
+      border-radius: 10px;
+    }
+    .payments h2 {
+      color: #ffce00;
+    }
+    .payments button {
+      margin: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Network Delivers Logo" />
+    <h1>We Deliver Everything, Everywhere</h1>
+  </header>
+
+  <main>
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Product 1" />
+        <h3>Product Name 1</h3>
+        <p>₹499</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200" alt="Product 2" />
+        <h3>Product Name 2</h3>
+        <p>₹799</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Add more products here -->
+    </div>
+
+    <div class="payments">
+      <h2>Choose Payment Method</h2>
+      <button>Google Pay</button>
+      <button>PhonePe</button>
+      <button>Paytm</button>
+      <button>Amazon Pay</button>
+      <button>UPI</button>
+      <button>Credit / Debit Card</button>
+      <button>Cash on Delivery</button>
+    </div>
+  </main>
+</body>
+</html>
+
