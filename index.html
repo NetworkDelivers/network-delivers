@@ -9,34 +9,63 @@
 <body>
   <header>
     <img src="logo.png" alt="Network Delivers Logo" class="logo" />
-    <nav>
-      <a href="#">My Account</a>
-      <a href="#">Cart</a>
-    </nav>
+    <h1>Network Delivers</h1>
+    <div class="nav-actions">
+      <button onclick="toggleLogin()">Login</button>
+      <div class="cart">
+        🛒 <span id="cart-count">0</span>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Network Delivers</h1>
-    <p class="slogan">"Fast. Reliable. Delivered."</p>
-    <p class="sub-slogan">"Powered by Tech, Delivered with Trust."</p>
-  </section>
-
+  <!-- Scrollable Product Section -->
   <section class="products">
-    <div class="product-card">
-      <h3>Product 1</h3>
-      <p>Description goes here</p>
-      <button>Add to Cart</button>
+    <h2>Our Products</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 1" />
+        <h3>Item One</h3>
+        <p>₹499</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 2" />
+        <h3>Item Two</h3>
+        <p>₹899</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 3" />
+        <h3>Item Three</h3>
+        <p>₹299</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <!-- Add more product cards as needed -->
     </div>
-    <div class="product-card">
-      <h3>Product 2</h3>
-      <p>Description goes here</p>
-      <button>Add to Cart</button>
-    </div>
-    <!-- Add more product cards as needed -->
   </section>
 
-  <footer>
-    <p>&copy; 2025 Network Delivers</p>
-  </footer>
+  <!-- Login Form -->
+  <div class="login-popup" id="loginPopup">
+    <div class="login-box">
+      <h2>Customer Login</h2>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button onclick="toggleLogin()">Login</button>
+    </div>
+  </div>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cart-count").innerText = cartCount;
+    }
+
+    function toggleLogin() {
+      const popup = document.getElementById("loginPopup");
+      popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
