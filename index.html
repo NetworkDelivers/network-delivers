@@ -11,90 +11,138 @@
       background-color: #000;
       color: #fff;
     }
-
     header {
-      background-color: #000;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    header img {
-      width: 300px;
-      max-width: 90vw;
-      height: auto;
-    }
-
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem;
-      gap: 2rem;
-    }
-
-    .product {
-      background: #1a1a1a;
-      border: 2px solid #ffd700;
-      border-radius: 12px;
+      background-color: #ffc107;
       padding: 1rem;
-      width: 200px;
       text-align: center;
     }
-
-    .product img {
-      width: 100%;
-      height: auto;
+    header img {
+      height: 100px;
+    }
+    .slogan {
+      font-size: 1.2rem;
+      color: #000;
+      margin: 0.25rem 0;
+    }
+    nav {
+      background-color: #222;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    .payment-methods img {
+      height: 30px;
+      margin-right: 1rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .product {
+      background-color: #111;
+      border: 1px solid #ffc107;
+      padding: 1rem;
+      text-align: center;
       border-radius: 10px;
     }
-
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
     .btn {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #ffd700;
-      color: #000;
+      background-color: #ffc107;
       border: none;
-      border-radius: 6px;
+      padding: 0.5rem 1rem;
       cursor: pointer;
-      font-weight: bold;
+      margin-top: 0.5rem;
     }
-
-    .payment-methods {
-      background: #fff;
-      color: #000;
+    .form-section, .location-section {
       padding: 2rem;
-      text-align: center;
+      background-color: #111;
     }
-
-    .payment-methods img {
-      width: 100px;
-      margin: 1rem;
+    .form-section input {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      width: 100%;
     }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Network Delivers Logo" />
+    <div class="slogan">Fast. Reliable. Delivered.</div>
+    <div class="slogan">Powered by Tech, Delivered with Trust.</div>
   </header>
 
-  <main>
-    <section class="products">
-      <div class="product">
-        <img src="https://via.placeholder.com/200" alt="Product 1" />
-        <h3>Product Name</h3>
-        <p>₹999</p>
-        <button class="btn">Add to Cart</button>
-      </div>
-      <!-- Add more products here -->
-    </section>
+  <nav>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">My Account</a>
+      <a href="#">Cart</a>
+      <a href="#">Login</a>
+    </div>
+    <div class="payment-methods">
+      <img src="gpay.png" alt="Google Pay">
+      <img src="phonepe.png" alt="PhonePe">
+      <img src="paypal.png" alt="PayPal">
+      <img src="stripe.png" alt="Stripe">
+      <img src="razorpay.png" alt="Razorpay">
+    </div>
+  </nav>
 
-    <section class="payment-methods">
-      <h2>Pay with</h2>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Google_Pay_Logo.svg" alt="Google Pay" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/PhonePe_Logo.svg" alt="PhonePe" />
-      <!-- Add other payment options here -->
-    </section>
-  </main>
+  <section class="products">
+    <div class="product">
+      <img src="product1.jpg" alt="Product 1">
+      <h3>Product Name 1</h3>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="product2.jpg" alt="Product 2">
+      <h3>Product Name 2</h3>
+      <button class="btn">Add to Cart</button>
+    </div>
+    <!-- Add unlimited products here -->
+  </section>
+
+  <section class="form-section">
+    <h2>Delivery Info</h2>
+    <input type="text" placeholder="Full Name">
+    <input type="text" placeholder="Address">
+    <input type="text" placeholder="Pincode">
+    <input type="text" placeholder="Phone Number">
+  </section>
+
+  <section class="location-section">
+    <h2>Your Location</h2>
+    <p id="location"></p>
+  </section>
+
+  <script>
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        document.getElementById('location').textContent = `Latitude: ${lat}, Longitude: ${lon}`;
+      }, () => {
+        document.getElementById('location').textContent = "Unable to retrieve your location.";
+      });
+    } else {
+      document.getElementById('location').textContent = "Geolocation not supported by your browser.";
+    }
+  </script>
 </body>
 </html>
+
 
 
