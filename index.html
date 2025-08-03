@@ -1,69 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Network Delivers</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- Header -->
   <header>
-    <div class="logo-container">
-      <img src="images/logo.png" alt="Network Delivers Logo" class="logo">
-      <div class="slogans">
-        <h1>Fast. Reliable. Delivered.</h1>
-        <p>Powered by Tech, Delivered with Trust.</p>
-      </div>
+    <div class="logo-section">
+      <img src="logo.png" alt="Network Delivers Logo" class="logo" />
+      <h1 class="slogan-main">Fast. Reliable. Delivered.</h1>
+      <h2 class="slogan-sub">Powered by Tech, Delivered with Trust.</h2>
     </div>
     <nav>
-      <div class="account">My Account</div>
-      <div class="payments">
-        <img src="images/razorpay.png" alt="Razorpay">
-        <img src="images/stripe.png" alt="Stripe">
-        <img src="images/paypal.png" alt="PayPal">
-        <img src="images/gpay.png" alt="Google Pay">
-        <img src="images/phonepe.png" alt="PhonePe">
+      <a href="#account">My Account</a>
+      <div class="payment-buttons">
+        <button>Razorpay</button>
+        <button>Stripe</button>
+        <button>PayPal</button>
+        <button>Google Pay</button>
+        <button>PhonePe</button>
       </div>
     </nav>
   </header>
 
-  <!-- Product Section -->
-  <section class="products">
-    <!-- Example Product (duplicate for more) -->
-    <div class="product">
-      <img src="images/product1.jpg" alt="Product 1">
-      <h3>Product Name</h3>
-      <p>₹499</p>
-      <button onclick="addToCart('Product Name', 499)">Add to Cart</button>
-    </div>
-  </section>
+  <main>
+    <section class="products" id="product-list">
+      <!-- Products will be injected here by JS -->
+    </section>
 
-  <!-- Cart Section -->
-  <section class="cart">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p>Total: ₹<span id="cart-total">0</span></p>
-    <button onclick="checkout()">Checkout</button>
-  </section>
+    <section class="cart" id="cart-section">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <p id="total-price">Total: ₹0</p>
+      <button id="checkout-btn">Checkout</button>
+    </section>
 
-  <!-- Delivery Info Form -->
-  <section class="delivery-info">
-    <h2>Enter Delivery Details</h2>
-    <form id="delivery-form">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="text" name="address" placeholder="Address" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-      <input type="text" id="location" placeholder="Fetching your location..." readonly>
-      <button type="submit">Place Order</button>
-    </form>
-  </section>
+    <section class="delivery-form">
+      <h3>Delivery Information</h3>
+      <form id="delivery-info-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="text" placeholder="Address" required />
+        <input type="text" placeholder="City" required />
+        <input type="text" placeholder="Postal Code" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <button type="submit">Save Info</button>
+      </form>
+    </section>
+
+    <section class="geolocation">
+      <h3>Your Location</h3>
+      <button onclick="getLocation()">Get My Location</button>
+      <p id="location-output"></p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
-
