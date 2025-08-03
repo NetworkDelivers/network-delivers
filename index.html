@@ -2,59 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Network Delivers</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo-section">
-      <img src="logo.png" alt="Network Delivers Logo" class="logo" />
-      <h1 class="slogan-main">Fast. Reliable. Delivered.</h1>
-      <h2 class="slogan-sub">Powered by Tech, Delivered with Trust.</h2>
+  <!-- Header with Logo and Slogans -->
+  <header class="header">
+    <img src="logo.png" alt="Network Delivers Logo" class="logo">
+    <h1 class="slogan">Fast. Reliable. Delivered.</h1>
+    <h2 class="slogan-2">Powered by Tech, Delivered with Trust.</h2>
+    <div class="account">
+      <button onclick="signIn()">Sign In</button>
+      <button onclick="logIn()">Log In</button>
     </div>
-    <nav>
-      <a href="#account">My Account</a>
-      <div class="payment-buttons">
-        <button>Razorpay</button>
-        <button>Stripe</button>
-        <button>PayPal</button>
-        <button>Google Pay</button>
-        <button>PhonePe</button>
-      </div>
-    </nav>
   </header>
 
-  <main>
-    <section class="products" id="product-list">
-      <!-- Products will be injected here by JS -->
-    </section>
+  <!-- Payment Options -->
+  <section class="payment-section">
+    <h3>Choose Payment Method:</h3>
+    <button class="pay-btn">Google Pay</button>
+    <button class="pay-btn">PhonePe</button>
+    <button class="pay-btn">Razorpay</button>
+    <button class="pay-btn">Stripe</button>
+    <button class="pay-btn">PayPal</button>
+  </section>
 
-    <section class="cart" id="cart-section">
-      <h3>Your Cart</h3>
-      <ul id="cart-items"></ul>
-      <p id="total-price">Total: ₹0</p>
-      <button id="checkout-btn">Checkout</button>
-    </section>
+  <!-- Scrollable Product Section -->
+  <section class="products">
+    <h2>Our Products</h2>
+    <div class="product-list" id="product-list">
+      <!-- Add your products here -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 1">
+        <h4>Product 1</h4>
+        <button onclick="addToCart('Product 1')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/150" alt="Product 2">
+        <h4>Product 2</h4>
+        <button onclick="addToCart('Product 2')">Add to Cart</button>
+      </div>
+      <!-- Add unlimited products -->
+    </div>
+  </section>
 
-    <section class="delivery-form">
-      <h3>Delivery Information</h3>
-      <form id="delivery-info-form">
-        <input type="text" placeholder="Full Name" required />
-        <input type="text" placeholder="Address" required />
-        <input type="text" placeholder="City" required />
-        <input type="text" placeholder="Postal Code" required />
-        <input type="tel" placeholder="Phone Number" required />
-        <button type="submit">Save Info</button>
-      </form>
-    </section>
+  <!-- Shopping Cart -->
+  <section class="cart">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+  </section>
 
-    <section class="geolocation">
-      <h3>Your Location</h3>
-      <button onclick="getLocation()">Get My Location</button>
-      <p id="location-output"></p>
-    </section>
-  </main>
+  <!-- Delivery Info Form -->
+  <section class="delivery-form">
+    <h3>Delivery Info</h3>
+    <form id="deliveryForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="Address" required>
+      <input type="text" id="location" placeholder="Your Location" required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Location Tracking -->
+  <section class="location-section">
+    <h3>Track My Location</h3>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="locationDisplay"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Network Delivers | All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
